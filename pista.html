@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Búsqueda del tesoro</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{min-height:100vh;background:#f0c0e6;font-family:'Playfair Display',Georgia,serif;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3vh;padding:8vh 6vw;text-align:center;position:relative}
+body:before,body:after{content:"";position:fixed;left:0;right:0;height:7vh;background:#f4f1f6;z-index:-1}
+body:before{top:0;clip-path:polygon(0 0,100% 0,100% 55%,85% 90%,65% 60%,45% 100%,25% 65%,8% 95%,0 60%)}
+body:after{bottom:0;clip-path:polygon(0 40%,10% 5%,30% 40%,50% 0,70% 45%,90% 10%,100% 40%,100% 100%,0 100%)}
+.tag{background:#000;color:#fff;padding:.3em .9em;font-size:4.2vw;letter-spacing:.15em;text-transform:uppercase;font-weight:600}
+.dots{display:flex;gap:2vw}.dots i{width:3vw;height:3vw;max-width:14px;max-height:14px;border-radius:50%;border:2px solid #000}.dots i.on{background:#000}
+.box{background:#fff;padding:1.2em 1em;font-size:5.4vw;line-height:1.35;font-weight:600;transform:rotate(-1.2deg);max-width:600px}
+button{font:inherit;font-weight:900;font-size:4.4vw;background:#000;color:#fff;border:0;padding:.7em 1.2em;transform:rotate(1.5deg)}
+#h{background:#fff;padding:.7em 1em;font-size:4.4vw;display:none;transform:rotate(1deg);max-width:600px}
+.f{font-size:4vw;font-weight:600}
+@media(min-width:700px){.box{font-size:28px}.tag{font-size:16px}button{font-size:20px}#h,.f{font-size:20px}}
+</style></head><body>
+<div class="tag" id="tag"></div><div class="dots" id="dots"></div>
+<div class="box" id="t"></div>
+<button id="b">¿Me trabé? Dame una pista</button><div id="h"></div>
+<p class="f">Cuando encuentres el QR, escanealo con la cámara del celular ★</p>
+<script src="pistas.js"></script>
+<script>
+const $=s=>document.querySelector(s),i=PISTAS.findIndex(p=>p.c===new URLSearchParams(location.search).get('c'));
+if(i<0){$('#tag').textContent='Ups';$('#t').textContent='Este QR no es de ninguna pista. Probá escaneando de nuevo.';$('#b').hidden=true}
+else{const p=PISTAS[i];$('#tag').textContent=`Pista ${i+1} de ${PISTAS.length}`;$('#t').textContent=p.t;$('#h').textContent='👉 '+p.h;
+$('#dots').innerHTML=PISTAS.map((_,k)=>`<i class="${k<=i?'on':''}"></i>`).join('');
+$('#b').onclick=()=>{$('#h').style.display='block';$('#b').hidden=true}}
+</script></body></html>

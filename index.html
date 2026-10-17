@@ -19,14 +19,14 @@ html,body{height:100%;background:#f0c0e6;overflow:hidden;font-family:'Playfair D
 #hint{position:fixed;top:2vh;right:2vw;font:2vh sans-serif;color:#0008;z-index:9;transition:opacity 1s}
 </style></head><body>
 <div id="bar"></div><div id="hint">Click o ▶ para iniciar · F pantalla completa · ← → navegar</div>
-<div id="qr" class="s"><h1>Escaneá el QR<br>para ver tu regalo 🎁</h1><div class="box" id="code"></div><p>Apuntá la cámara del celular</p></div>
+<div id="qr" class="s"><h1>Escaneá el QR<br>para empezar a buscar tu regalo 🎁</h1><div class="box" id="code"></div><p>Apuntá la cámara del celular</p></div>
 <script src="qrcode.js"></script>
 <script>
 const D=5000,N=5,$=s=>document.querySelector(s);
 const qrEl=$('#qr');
 for(let i=N;i>=1;i--){const d=document.createElement('div');d.className='s';d.innerHTML=`<img src="img/${i}.jpg">`;document.body.prepend(d)}
 const slides=[...document.querySelectorAll('.s')];
-const url=new URL('regalo.html',location.href).href;
+const url=new URL('pista.html?c=a1x',location.href).href;
 const q=qrcode(0,'M');q.addData(url);q.make();$('#code').innerHTML=q.createSvgTag({cellSize:8,margin:0,scalable:true});
 let i=-1,t,started=false;
 function go(n){i=(n+slides.length)%slides.length;slides.forEach((s,k)=>s.classList.toggle('on',k===i));clearTimeout(t);

@@ -1,0 +1,8 @@
+const PISTAS=[
+{c:'a1x',lugar:'banqueta',t:'Bienvenida, detective. Primera parada: donde comemos siempre. Hay una banqueta con una pata que no cumple su función: cruje, baila y protesta como si le debieran plata. Sentate con cuidado y mirá bien, que el próximo QR está ahí.',h:'Es la de la barra del comedor, la que hace ruido.'},
+{c:'b2k',lugar:'cama grande',t:'¡Bien ahí! Ahora, alguien tiene pieza propia, con cama y todo, pero de noche hace como que no existe y se mete en la de ustedes. Sí, Lolo y su contrabando nocturno. Andá a donde duerme Lolo cuando se escapa.',h:'La cama grande, donde siempre se cuela.'},
+{c:'c3m',lugar:'pieza de Lolo',t:'Excelente. Ahora la pieza oficial de Lolo, esa que casi no usa. Ahí hay un asunto pendiente hace 2 meses: Gustavo tiene que venir y siempre aparece con una excusa nueva. No te distraigas con la excusa, buscá el QR.',h:'El cuarto de Lolo, el de verdad.'},
+{c:'d4p',lugar:'pieza de Mora',t:'Vas como un cohete. Siguiente: un cuarto donde reina el orden. Todo prolijo, metódico y en su lugar, hasta que entra Toto, el perro, y duerme con su dueña como si nada. Andá a la pieza de Mora.',h:'La pieza más ordenada de la casa.'},
+{c:'e5r',lugar:'baño',t:'Casi, casi. Ahora un misterio sin resolver: un bidet que no funciona y Raúl, el plomero, que no lo puede arreglar. Andá al baño y revisá cerca del culpable.',h:'En el baño, cerca del bidet que no anda.'},
+{c:'f6t',lugar:'quincho',t:'Última pista. Hora de juntada: Navidades, brindis y regalos alrededor del hogar. Andá al quincho y buscá junto al fuego. Ahí te espera lo que tanto buscaste.',h:'El quincho, al lado del hogar.'}
+];
